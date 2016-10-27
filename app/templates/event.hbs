@@ -3,8 +3,17 @@
 
 <img src="{{model.image}}" alt="Image">
 
+
+
 {{update-event event=model update="update"}}
 
 {{event-detail event=model destroyEvent="destroyEvent"}}
 
 {{new-review saveReview="saveReview" event=model}}
+<h1> Concert Reviews </h1>
+
+<ul>
+  {{#each model.reviews as |review|}}
+    <li>{{review.rating}} - {{review.content}} - by {{review.author}}</li>
+  {{/each}}
+</ul>
