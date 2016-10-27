@@ -28,6 +28,11 @@ export default Ember.Route.extend({
     destroyEvent(event) {
       event.destroyRecord();
       this.transitionTo('index');
+    },
+
+    destroyReview(review) {
+      review.destroyRecord();
+      this.transitionTo('index');
     }
   }
 });

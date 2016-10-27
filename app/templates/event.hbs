@@ -7,13 +7,16 @@
 
 {{update-event event=model update="update"}}
 
-{{event-detail event=model destroyEvent="destroyEvent"}}
+{{event-detail event=model destroyEvent="destroyEvent" destroyReview="destroyReview"}}
 
 {{new-review saveReview="saveReview" event=model}}
+
 <h1> Concert Reviews </h1>
 
 <ul>
   {{#each model.reviews as |review|}}
-    <li>{{review.rating}} - {{review.content}} - by {{review.author}}</li>
+    <li>{{review.rating}} - {{review.content}} - by {{review.author}}
+      <button id="deleteButton" {{action 'destroyReview' review}}>Delete Review</button>
+    </li>
   {{/each}}
 </ul>
