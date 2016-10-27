@@ -1,0 +1,10 @@
+
+<h2>Details About {{model.band}}'s {{model.date}} Concert in {{model.city}}</h2>
+
+<img src="{{model.image}}" alt="Image">
+
+{{update-event event=model update="update"}}
+
+{{event-detail event=model destroyEvent="destroyEvent"}}
+
+{{new-review saveReview="saveReview" event=model}}

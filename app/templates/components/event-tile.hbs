@@ -1,0 +1,9 @@
+
+<li>
+  {{event.date}} || {{event.band}} || {{event.venue}} || {{event.city}}
+  <br>
+  <img src="{{event.image}}" alt="band pic">
+  <br>
+   {{update-event event=event update="update"}}
+   <button id="deleteButton" {{action 'delete' event}}>Delete Event</button>
+</li>

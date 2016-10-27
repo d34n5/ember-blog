@@ -1,0 +1,14 @@
+
+<h3> {{event.band}} is playing in {{event.city}} on {{event.date}}.
+<br>
+<p><img src='{{event.image}}' alt='{{event.band}}'></p>
+
+
+<h2> Reviews </h2>
+<ul>
+  {{#each event.reviews as |review|}}
+    {{review-tile review=review}}
+  {{/each}}
+</ul>
+
+<button id="deleteButton" {{action 'delete' event}}>Delete event</button>

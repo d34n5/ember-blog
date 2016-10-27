@@ -1,0 +1,23 @@
+
+{{new-event saveEvent2="saveEvent3"}}
+
+<h1> Upcoming Shows </h1>
+<ul>
+  {{#each model.events as |event|}}
+    {{event-tile event=event update="update" destroyEvent="destroyEvent"}}
+    {{#link-to 'event' event.id}}Details and Reviews{{/link-to}}
+  {{/each}}
+</ul>
+
+<h1> Concert Reviews </h1>
+
+<ul>
+  {{#each model.reviews as |review|}}
+    <li>{{review.rating}} - {{review.content}} - by {{review.author}}</li>
+  {{/each}}
+</ul>
+
+<hr>
+
+{{#link-to 'about'}}About{{/link-to}}
+{{#link-to 'contact'}}Click here to contact us.{{/link-to}}
